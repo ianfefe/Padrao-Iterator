@@ -1,0 +1,32 @@
+classDiagram
+    direction TB
+
+    class Iterable~Venda~ {
+        <<interface>>
+        +iterator() Iterator~Venda~
+    }
+
+    class Plataforma {
+        -List~Venda~ vendas
+        +Plataforma(Venda... vendas)
+        +iterator() Iterator~Venda~
+    }
+
+    class Venda {
+        -String codigo
+        -boolean concluida
+        +Venda(String codigo, boolean concluida)
+        +getCodigo() String
+        +getConcluida() boolean
+        +setCodigo(String codigo)
+        +setConcluida(boolean concluida)
+    }
+
+    class Relatorio {
+        +contarVendasConcluidasPlataforma(Plataforma plataforma) Integer
+        +contarTotalVendasPlataforma(Plataforma plataforma) Integer
+    }
+
+Iterable <|.. Plataforma
+Plataforma "1" o-- "*" Venda
+Relatorio ..> Plataforma

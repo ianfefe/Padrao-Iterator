@@ -11,7 +11,7 @@ public class Venda {
         return codigo;
     }
 
-    public void setNome(String codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -19,7 +19,7 @@ public class Venda {
         return concluida;
     }
 
-    public void setAtivo(boolean concluida) {
+    public void setConcluida(boolean concluida) {
         this.concluida = concluida;
     }
 }
